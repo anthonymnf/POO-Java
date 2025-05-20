@@ -3,23 +3,28 @@ package aulas.aula05.data;
 import java.util.Scanner;
 
 public class Data {
-  int dia, mes, ano;
+  private int dia, mes, ano;
 
-  boolean dataEhValida() {
+  private boolean dataEhValida() {
     return (dia > 0 && dia <= 30 && mes > 0 & mes <= 12 && ano >= 0);
   }
 
-  void inicializaData(int d, int m, int a) {
+  private void inicializaData(int d, int m, int a) {
     dia = d;
     mes = m;
     ano = a;
+    if (!this.dataEhValida()) {
+      dia = 1;
+      mes = 1;
+      ano = 2000;
+    }
   }
 
-  void mostraData() {
+  public void mostraData() {
     System.out.println(dia + "/" + mes + "/" + ano);
   }
 
-  void recebendoData() {
+  public void recebendoData() {
     int d, m, a;
     Scanner input = new Scanner(System.in);
     System.out.print("Informe o dia:");
