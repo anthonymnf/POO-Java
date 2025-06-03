@@ -12,6 +12,18 @@ public class Tabuleiro {
         tab[l][c] = '.';
       }
     }
+    // Time o
+    for (int l = 0; l <= 2; l++) {
+      for (int c = l % 2; c < tab[l].length; c += 2) {
+        tab[l][c] = 'o';
+      }
+    }
+    // Time x
+    for (int l = 5; l <= 7; l++) {
+      for (int c = l % 2; c < tab[l].length; c += 2) {
+        tab[l][c] = 'x';
+      }
+    }
   }
 
   @Override
